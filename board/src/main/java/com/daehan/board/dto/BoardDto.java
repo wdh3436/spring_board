@@ -1,14 +1,8 @@
 package com.daehan.board.dto;
 
 import java.time.LocalDateTime;
-
 import com.daehan.board.domain.entity.BoardEntity;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter

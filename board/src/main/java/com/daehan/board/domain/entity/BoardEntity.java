@@ -10,10 +10,10 @@ import jakarta.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name = "board")
+@Table(name = "board") // 테이블 정보를 명시하는 어노테이션
 public class BoardEntity extends TimeEntity {
 
-    @Id
+    @Id // 기본 키 명시 어노테이션
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
