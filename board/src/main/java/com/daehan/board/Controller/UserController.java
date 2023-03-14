@@ -5,17 +5,42 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.daehan.board.dto.AccountDto;
 import com.daehan.board.service.AccountService;
-
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
+	
 	private final AccountService accountService;
+	
+	
+	@GetMapping("/home")
+    public String home(Model model){
+        log.info("home controller");
+        return "/user/home";
+    }
+	
+	@GetMapping("/user")
+    public String dispUser(Model model){
+        log.info("home controller");
+        return "/user/user";
+    }
+    @GetMapping("/manager")
+    public String dispManager(Model model){
+        log.info("home controller");
+        return "/user/manager";
+    }
+    @GetMapping("/admin")
+    public String dispAdmin(Model model){
+        log.info("home controller");
+        return "/user/admin";
+    }
+    
 
     @GetMapping("/loginUser")
     public String createUserForm(Model model){
@@ -32,10 +57,4 @@ public class UserController {
 
         return "redirect:/";
     }
-    
-    @GetMapping("/register")
-    public String sign(){
-        return "user/login/register";
-    }
-    
 }

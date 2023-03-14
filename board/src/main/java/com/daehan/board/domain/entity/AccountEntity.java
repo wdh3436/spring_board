@@ -18,10 +18,6 @@ public class AccountEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	public Long getId() {
-		return id;
-	}
-
     private String username;
     private String password;
     private String email;
